@@ -8,7 +8,7 @@ namespace ApiServiceHub.Hubs.Configuracoes
     {
         public static void MapHubRoute(this IEndpointRouteBuilder endpoints)
         {            
-            endpoints.MapHub<ExemploHub>(SignalRName.RouteExemploHub);
+            endpoints.MapHub<ExampleHub>(SignalRName.RouteExemploHub);
         }
     }
 }

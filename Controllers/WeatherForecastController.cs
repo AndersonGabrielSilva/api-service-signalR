@@ -20,9 +20,9 @@ namespace ApiEventSignalR.Controllers
         };
 
         private readonly ILogger<WeatherForecastController> _logger;
-        private readonly IHubContext<ExemploHub> hubContext;
+        private readonly IHubContext<ExampleHub> hubContext;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger, IHubContext<ExemploHub> hubContext)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, IHubContext<ExampleHub> hubContext)
         {
             _logger = logger;
             this.hubContext = hubContext;

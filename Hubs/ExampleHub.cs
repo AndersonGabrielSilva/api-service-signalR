@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace ApiServiceHub.Hubs
 {
-    public class ExemploHub : BaseHub
+    public class ExampleHub : BaseHub
     {
         #region Gerenciador de grupos
         public override Task JoinGroup(string groupName)

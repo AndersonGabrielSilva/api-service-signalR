@@ -3,7 +3,7 @@
     public static class SignalRName
     {
         #region Rotas
-        public const string RouteExemploHub = "/exemplohub";
+        public const string RouteExampleHub = "/exemplehub";
         #endregion
 
         #region Grupos
@@ -12,10 +12,11 @@
 
         #region Metodos Server
         public const string JoinGroup = nameof(JoinGroup);
+        public const string LeaveGroup = nameof(LeaveGroup);
         #endregion
 
         #region Metodos Client
-        public const string ExemploHub = nameof(ExemploHub);
+        public const string ExampleHub = nameof(ExampleHub);
         #endregion
     }
 }

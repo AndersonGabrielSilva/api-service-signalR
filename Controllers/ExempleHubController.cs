@@ -6,14 +6,14 @@ using ApiServiceHub.SignalR;
 
 namespace ApiServiceHub.Controllers
 {
-    public class ExemploHubController : BaseHubController
+    public class ExempleHubController : BaseHubController
     {
         #region Atributos Auxiliares
-        private readonly IHubContext<ExemploHub> hubContext;
+        private readonly IHubContext<ExampleHub> hubContext;
         #endregion
 
         #region Construtor
-        public ExemploHubController(IHubContext<ExemploHub> hubContext)
+        public ExempleHubController(IHubContext<ExampleHub> hubContext)
         {
             this.hubContext = hubContext;
         }
