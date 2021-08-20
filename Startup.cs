@@ -22,8 +22,10 @@ namespace ApiEventSignalR
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSignalR();
+
             services.AddCors();
             services.AddControllers();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ApiEventSignalR", Version = "v1" });

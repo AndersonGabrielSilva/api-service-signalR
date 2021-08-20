@@ -13,6 +13,15 @@ namespace ApiServiceHub.Hubs
 
         private readonly static ConcurrentDictionary<string, int> _currentProgress
             = new ConcurrentDictionary<string, int>();
+
+        private readonly IHubContext<ProgressHub, IProgressHubClientFunctions> _progressHub;
+        #endregion
+
+        #region Constructor
+        public LongRunningOperation(IHubContext<ProgressHub, IProgressHubClientFunctions> progressHub)
+        {
+            _progressHub = progressHub;
+        }
         #endregion
 
         public static int GetCurrentProgress(string operationId)
@@ -25,13 +34,6 @@ namespace ApiServiceHub.Hubs
             => _cancellationRequests.GetOrAdd(operationId, false);
 
 
-        private readonly IHubContext<ProgressHub, IProgressHubClientFunctions> _progressHub;
-
-        public LongRunningOperation(IHubContext<ProgressHub, IProgressHubClientFunctions> progressHub)
-        {
-            _progressHub = progressHub;
-        }
-
         public async Task DoOperation(string operationId)
         {
             await Task.Yield();
@@ -39,7 +41,9 @@ namespace ApiServiceHub.Hubs
             decimal totalDelay = 0;
 
             await _progressHub.Clients.Group(operationId).SetMessage("Processing...");
-            for (int progress = 0; progress <= 100; progress++)
+
+            var percentage = 100;
+            for (int progress = 0; progress <= percentage; progress++)
             {
                 if (IsCancelled(operationId))
                 {
