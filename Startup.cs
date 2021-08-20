@@ -22,7 +22,8 @@ namespace ApiEventSignalR
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSignalR();
-                    //.AddStackExchangeRedis("localhost");//Configura Redis 
+            //.AddAzureSignalR("connectionstring");
+            //.AddStackExchangeRedis("localhost");//Configura Redis 
 
             services.AddCors();
             services.AddControllers();
@@ -62,6 +63,11 @@ namespace ApiEventSignalR
                   .WithMethods("GET", "PATCH", "DELETE", "PUT", "POST", "OPTIONS")
                   .AllowCredentials();
             });
+
+            //app.UseAzureSignalR(endpoints =>
+            //{
+            //    endpoints.MapHubRouteAzure();
+            //});
 
             app.UseHttpsRedirection();
 

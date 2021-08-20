@@ -47,7 +47,7 @@ namespace ApiEventSignalR.Controllers
         [HttpGet("Teste")]
         public async Task<ActionResult> Post(string group, string Teste)
         {
-            await hubContext.Clients.All.SendAsync(group + SignalRName.RouteExemploHub, Teste);
+            await hubContext.Clients.All.SendAsync(group + SignalRName.RouteExampleHub, Teste);
             return Ok();
         }
     }

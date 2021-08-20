@@ -25,7 +25,7 @@ namespace ApiServiceHub.Controllers
         public async Task<IActionResult> Get(string group, string mensagem)
         {
             //Notifica todos os hubs conectados
-            await hubContext.Clients.All.SendAsync(group + SignalRName.ExemploHub, mensagem);
+            await hubContext.Clients.All.SendAsync(group + SignalRName.ExampleHub, mensagem);
 
             return Ok();
         }

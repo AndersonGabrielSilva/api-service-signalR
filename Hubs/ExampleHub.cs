@@ -9,12 +9,12 @@ namespace ApiServiceHub.Hubs
         #region Gerenciador de grupos
         public override Task JoinGroup(string groupName)
         {
-            return Groups.AddToGroupAsync(Context.ConnectionId, (groupName + SignalRName.ExemploHub));
+            return Groups.AddToGroupAsync(Context.ConnectionId, (groupName + SignalRName.ExampleHub));
         }
 
         public override Task LeaveGroup(string groupName)
         {
-            return Groups.RemoveFromGroupAsync(Context.ConnectionId, (groupName + SignalRName.ExemploHub));
+            return Groups.RemoveFromGroupAsync(Context.ConnectionId, (groupName + SignalRName.ExampleHub));
         }
         #endregion
 
@@ -23,7 +23,7 @@ namespace ApiServiceHub.Hubs
         public override async Task SendMessageGroup(string groupName, string message)
         {
             //Notifica todos os Hubs conectados
-            await Clients.All.SendAsync(groupName + SignalRName.ExemploHub, message);
+            await Clients.All.SendAsync(groupName + SignalRName.ExampleHub, message);
         }
         #endregion
     }
