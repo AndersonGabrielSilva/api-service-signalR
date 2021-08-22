@@ -1,9 +1,12 @@
 # ApiServiceSignalR
 
 
-Api oferece um serviço de Hub/WebSockes com SignalR.
-Projeto destinado a oferecer uma base e exemplo de configuração de ambiente
+Api oferece um serviço de Hub/Websocket com CoreSignalR.
 
-[Intenção do projeto]
--Anotaçoes 
--Exemplos
+Projeto destinado a oferecer uma base e exemplo de como configurar o ambiente.
+
+## [Intenções do projeto]
+
+- Anotaçoes 
+
+- Exemplos
