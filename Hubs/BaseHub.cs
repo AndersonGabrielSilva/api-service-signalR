@@ -29,12 +29,12 @@ namespace ApiServiceHub.Hubs
         #region Gereenciador de grupos
         public virtual Task JoinGroup(string groupName)
         {
-            throw new NotImplementedException("Metódo não implementado");
+            return Groups.AddToGroupAsync(Context.ConnectionId, (groupName));
         }
 
         public virtual Task LeaveGroup(string groupName)
         {
-            throw new NotImplementedException("Metódo não implementado");
+         return Groups.RemoveFromGroupAsync(Context.ConnectionId, (groupName));     
         }
         #endregion
 
